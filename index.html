@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homelaber Portfolio</title>
+  <style>
+    /* VARIABLES */
+    :root {
+      --primary: #231123;
+      --secondary: #C30F45;
+      --bg-dark: #1a0f22;
+      --text-light: #f0e9f2;
+      --text-muted: #a080a1;
+      --border-radius: 8px;
+      --max-width: 900px;
+      --transition: 0.3s ease;
+      --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* BASE RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-stack);
+    }
+    body {
+      background-color: var(--primary);
+      color: var(--text-light);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: var(--max-width);
+      width: 90%;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 2px solid var(--secondary);
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      color: var(--secondary);
+    }
+    header p {
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition);
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: var(--secondary);
+      color: #fff;
+      outline: none;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 3rem;
+      background-color: var(--bg-dark);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgb(195 15 69 / 0.3);
+      transition: transform var(--transition);
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 0.3rem;
+    }
+    section p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    /* PROJECT LIST */
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .project-card {
+      background: var(--primary);
+      padding: 1rem 1.5rem;
+      border: 2px solid var(--secondary);
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition);
+    }
+    .project-card:hover {
+      background-color: var(--secondary);
+      color: #fff;
+      cursor: pointer;
+    }
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Homelaber Portfolio</h1>
+    <p>Crafting DIY Servers, Networks & Automation</p>
+  </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#docs">Documentation</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+    <!-- ABOUT -->
+    <section id="about" tabindex="0">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate homelaber with a love for building custom servers,
+        automating workflows, and exploring cutting-edge networking tech at home.
+        My toolkit includes Linux, Docker, Proxmox, and a bunch of open-source projects.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" tabindex="0">
+      <h2>Projects</h2>
+      <div class="projects">
+
+        <article class="project-card" tabindex="0" aria-label="Self-hosted Cloud Storage Project">
+          <h3>Self-hosted Cloud Storage</h3>
+          <p>Designed and deployed a secure Nextcloud instance on my server for encrypted personal storage and sync.</p>
+        </article>
+
+        <article class="project-card" tabindex="0" aria-label="Network Automation Scripts">
+          <h3>Network Automation</h3>
+          <p>Built Python scripts to automate VLAN configurations and firewall rule updates across all devices.</p>
+        </article>
+
+        <article class="project-card" tabindex="0" aria-label="Home Surveillance with Raspberry Pi">
+          <h3>Home Surveillance</h3>
+          <p>Implemented a DIY Raspberry Pi camera network with motion detection and alert notifications.</p>
+        </article>
+
+        <article class="project-card" tabindex="0" aria-label="Proxmox Virtualization Setup">
+          <h3>Proxmox Virtualization</h3>
+          <p>Configured Proxmox VM clusters for running isolated services, testing environments, and containerized apps.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DOCUMENTATION -->
+    <section id="docs" tabindex="0">
+      <h2>Documentation</h2>
+      <p>
+        Comprehensive guides on setting up and configuring my homelab systems, including hardware lists,
+        network diagrams, deployment scripts, and troubleshooting tips.
+      </p>
+      <ul>
+        <li><a href="#" style="color: var(--secondary);">Installing Proxmox VE on bare metal</a></li>
+        <li><a href="#" style="color: var(--secondary);">Docker Compose for media servers</a></li>
+        <li><a href="#" style="color: var(--secondary);">Network segmentation and VLAN setup</a></li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" tabindex="0">
+      <h2>Contact Me</h2>
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain" style="max-width: 500px;">
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required style="width:100%;padding: 0.5rem;margin-bottom:1rem;border-radius:5px;border:none;" />
+
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="email" required style="width:100%;padding: 0.5rem;margin-bottom:1rem;border-radius:5px;border:none;" />
+
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" required style="width:100%;padding: 0.5rem;margin-bottom:1rem;border-radius:5px;border:none;"></textarea>
+
+        <button type="submit" 
+          style="background-color: var(--secondary); color: white; border: none; padding: 0.7rem 1.4rem; font-weight: 700; border-radius: var(--border-radius); cursor: pointer; transition: background-color var(--transition);">
+          Send
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Homelaber Portfolio. Crafted with <span style="color: var(--secondary);">❤</span>
+  </footer>
+</body>
+</html>
